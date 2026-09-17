@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services &amp; Projects | SSB — Shree Skhandha Builders</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta
       name="description"
       content="Construction services and completed projects by SSB — Shree Skhandha Builders. Civil engineering, residential and building construction."
@@ -131,124 +132,101 @@
     <!-- ═══════════════════════════════════════════
      SERVICES DETAIL
 ═══════════════════════════════════════════ -->
-    <section
-      class="ssb-services-detail"
-      aria-labelledby="services-detail-heading"
-    >
-      <div class="container">
-        <div class="row mb-5 reveal">
-          <div class="col-lg-6">
-            <span class="section-label">Our Capabilities</span>
-            <span class="gold-rule"></span>
-            <h2 class="section-heading" id="services-detail-heading">
-              What We Build
-            </h2>
-          </div>
-        </div>
+ <section class="ssb-services-detail">
+
+  <div class="container">
+
+    <!-- HEADING -->
+    <div class="text-center mb-5">
+      <span class="section-label">Our Capabilities</span>
+      <span class="gold-rule"></span>
+
+      <h2 class="section-heading">
+        What We Build
+      </h2>
+    </div>
+
+
+    <!-- SERVICES CAROUSEL -->
+    <div class="services-carousel-wrapper">
+
+      <!-- LEFT BUTTON -->
+      <button
+        class="services-arrow services-prev"
+        onclick="previousService()"
+      >
+        ←
+      </button>
+
+
+      <!-- SERVICES -->
+      <div
+        class="services-carousel"
+        id="servicesDetailContainer"
+      ></div>
+
+
+      <!-- RIGHT BUTTON -->
+      <button
+        class="services-arrow services-next"
+        onclick="nextService()"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    <!-- DOTS -->
+    <div
+      class="services-dots"
+      id="servicesDots"
+    ></div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICE MODAL -->
+<div
+  class="modal fade"
+  id="serviceModal"
+  tabindex="-1"
+  aria-labelledby="serviceModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered" >
+
+    <div class="modal-content " id="service-modelContent">
+
+      <div class="modal-header">
+
+        <h5
+          class="modal-title"
+          id="serviceModalLabel"
+        >
+          Service Details
+        </h5>
+
+        <button
+          type="button"
+          class="btn-close btn-primary"
+          data-bs-dismiss="modal"
+        ></button>
+
       </div>
 
-      <!-- Service rows — full width -->
-      <div class="service-row reveal">
-        <div class="service-row-img">
-          <img
-            src="../IMAGES/Civil Engineering.jpg"
-            alt="Civil engineering work — foundation and structural construction"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-row-body">
-          <span class="gold-rule"></span>
-          <span class="section-label">01</span>
-          <h3>Civil Engineering</h3>
-          <p>
-            SSB undertakes civil engineering work with an emphasis on structural
-            integrity and precise execution. From site preparation and
-            foundation work through to completed civil structures, each project
-            is managed with technical care and professional oversight.
-          </p>
-          <p style="margin-top: 0.75rem; font-size: 0.88rem; color: #888">
-            Foundations &bull; Structural work &bull; Site development &bull;
-            Civil infrastructure
-          </p>
-        </div>
-      </div>
+      <div
+        class="modal-body"
+        id="serviceModalBody" style="background-color: rgb(240, 255, 240);"
+      ></div>
 
-      <div class="service-row reverse reveal" style="transition-delay: 0.05s">
-        <div class="service-row-img">
-          <img
-            src="../IMAGES/Residential_Construction.png"
-            alt="Completed residential home construction"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-row-body">
-          <span class="gold-rule"></span>
-          <span class="section-label">02</span>
-          <h3>Residential Construction</h3>
-          <p>
-            Building homes requires attention to detail, quality materials and
-            craftsmanship that stands up over time. SSB approaches residential
-            construction with careful planning and consistent workmanship
-            standards — ensuring the final result meets the client's
-            expectations.
-          </p>
-          <p style="margin-top: 0.75rem; font-size: 0.88rem; color: #888">
-            Individual homes &bull; Residential buildings &bull; Home extensions
-          </p>
-        </div>
-      </div>
+    </div>
 
-      <div class="service-row reveal" style="transition-delay: 0.05s">
-        <div class="service-row-img">
-          <img
-            src="../IMAGES/building_construction.png"
-            alt="Multi-storey building construction in progress"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-row-body">
-          <span class="gold-rule"></span>
-          <span class="section-label">03</span>
-          <h3>Building Construction</h3>
-          <p>
-            From planning through to completion, SSB manages building
-            construction projects with professional site organisation and
-            quality-focused execution. Multi-storey structures, commercial
-            buildings and mixed-use projects are handled with the same standards
-            applied to all our work.
-          </p>
-          <p style="margin-top: 0.75rem; font-size: 0.88rem; color: #888">
-            Commercial buildings &bull; Multi-storey structures &bull; Mixed-use
-            developments
-          </p>
-        </div>
-      </div>
+  </div>
+</div>
 
-      <div class="service-row reverse reveal" style="transition-delay: 0.05s">
-        <div class="service-row-img">
-          <img
-            src="../IMAGES/Construction.jpg"
-            alt="Construction contracting — professional site management"
-            loading="lazy"
-          />
-        </div>
-        <div class="service-row-body">
-          <span class="gold-rule"></span>
-          <span class="section-label">04</span>
-          <h3>Construction &amp; Contracting</h3>
-          <p>
-            SSB provides contracting services for construction projects of
-            varying scope and type. As a contracting partner, we bring
-            professional site management, organised execution and a reliable
-            work ethic to every project we take on.
-          </p>
-          <p style="margin-top: 0.75rem; font-size: 0.88rem; color: #888">
-            Project contracting &bull; Site management &bull; Sub-contracting
-            &bull; Turnkey delivery
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- ═══════════════════════════════════════════
      PROJECT GALLERY
