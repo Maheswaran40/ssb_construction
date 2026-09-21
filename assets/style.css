@@ -1055,7 +1055,7 @@ h1, h2, h3, h4, h5 {
 
 .topscroll{
   position: fixed;
-  bottom:30px;
+  bottom:100px;
   right: 30px;
   z-index: 3;
   border-radius: 100%;
@@ -1511,7 +1511,7 @@ cursor: pointer;
   .service-row-body { padding: 2rem 1.5rem; }
   .topscroll{
     right: 20px;
-    bottom: 20px;
+    bottom: 60px;
     width: 30px;
     height: 30px;
     font-size: small;
